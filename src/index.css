@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  background-color: #1f1f1f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.secondary-carousel .slick-list {
+  /* height: 250px; */
+}
+.slick-slide .slick-active .slick-current{
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .secondary-carousel .slick-list {
+    /* height: 160px; */
+  }
+}
+@media screen and (max-width: 480px) {
+  .secondary-carousel .slick-list {
+    /* height: 105px; */
+  }
+}
+
+.secondary-carousel 
+.slick-slide div:focus {
+  /* margin: 0 7px; */
+  outline: none;
+}
+
+.slick-dots li{
+  margin: 0px !important; 
+}
+.slick-dots li button:hover:before, 
+.slick-dots li button:focus:before{
+  /* opacity:0.3 !important; */
+  opacity:0.3 !important;
+}
+
+/* custom styles for image wrapper in the carousel */
+
+.carousel-img-wrp {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-img-wrp > img {
+  height: 121px;
+    width: 160px;
+    border-radius: 16px;
+}
+
+@media screen and (max-width: 480px) {
+  .secondary-carousel .carousel-img-wrp > img {
+    max-height: 110px;
+  }
+}
+.slick-slider .slick-dots li.slick-active button:before {
+  color:#fff;
+  /* opacity:1; */
+}
+
+.slick-slider .slick-dots li button::before {
+  color:lightgrey;
+  font-size: 10px;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+.product-carousel .slick-dots {
+  bottom: 28px;
+}
+
+.product-carousel .carousel-img-wrp {
+  max-height: 50vh;
+}
+
+.product-carousel .carousel-img-wrp > img {
+  object-fit: contain;
+  border-radius: 7px;
+}
+
+.product-carousel .slick-dots li button::before {
+  font-size: 16px;
+}
+
+.fslightbox-container{
+  background-color: #1f1f1f !important;
+}
+.fslightbox-toolbar-button:nth-child(1) {
+  display: none;
+  } 
+#main{
+  padding-bottom: 50px;
+  overflow-y: auto;
+  background-color: #1f1f1f;
+}
+
+@media screen and (max-width:600px){
+  #main{
+   
+    overflow-y: auto;
+  }
+}
+

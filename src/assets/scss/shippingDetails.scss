@@ -1,0 +1,66 @@
+// SHOW AND HIDE SCROLLBAR ON HOVER
+:root {
+  --scrollbar-track-color: transparent;
+  --scrollbar-color: #cbcbcb;
+
+  --scrollbar-size: .375rem;
+  --scrollbar-minlength: 1.5rem; /* Minimum length of scrollbar thumb (width of horizontal, height of vertical) */
+}
+.steps-wrapper{
+  
+  &::-webkit-scrollbar {
+    height: var(--scrollbar-size);
+    width: var(--scrollbar-size);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    cursor: pointer;
+    @media screen and (max-width:500px) {
+      background-color: var(--scrollbar-color);
+    }
+    border-radius: var(--scrollbar-size);
+  }
+  &:hover::-webkit-scrollbar-thumb{
+    background-color: var(--scrollbar-color);
+  }
+
+  &::-webkit-scrollbar-thumb:vertical {
+    min-height: var(--scrollbar-minlength);
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    min-width: var(--scrollbar-minlength);
+  }
+
+}
+
+// ***************************** //
+
+.steps-wrapper{
+  display: flex;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.delivery-card-wrapper{
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.delivery-card{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #cbcbcb;
+  padding:1rem;
+  cursor: pointer;
+
+  &__action{
+    padding-top: 7px;
+  }
+}
