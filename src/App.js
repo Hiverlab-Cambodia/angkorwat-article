@@ -12,6 +12,7 @@ import { I18nextProvider,useTranslation } from "react-i18next";
 import i18next from "i18next";
 import common_en from "./i18n/locales/en.json";
 import common_kh from "./i18n/locales/kh.json";
+import { Alert } from "@material-ui/lab";
 
 const getLangfromURL = () => {
     
@@ -82,18 +83,19 @@ const App = () => {
   useEffect(() => {
 
     const location = new URL(window.location.href);
-    // console.log('ll',location)
-
+    //console.log('ll',location.search)
+    
     if (location && location.search) {
-      // console.log('in location if')
+      console.log('in location if')
       const { token, lang } = qs.parse(location.search, {
         ignoreQueryPrefix: true,
       });
-
+      console.log('in location if'+token)
       if (lang) {
         sessionStorage.setItem("lang", lang.toLowerCase());
       }
       if (token) {
+        
         sessionStorage.setItem("token", token);
       }
     } else {
@@ -101,7 +103,7 @@ const App = () => {
         // console.log('in location else')
         sessionStorage.setItem(          
           //"token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX3R5cGUiOiJlbmRfdXNlciIsInVzZXJfaWQiOiI2MWU0ZmY5NzkzYTc3ZjY4ZDZhYzczNmUiLCJzZXNzaW9uX2lkIjoiZTVlZDM3ZWUtYmE2OC00ZTdmLTlmMGMtOTA4MzBmZDIwMTI1IiwiaWF0IjoxNjQ2ODkyNTExfQ.zJfgcfFEyHy_vuEtt2715TmJRi1KQ1VowHwbDfKiYrc"
-          "token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX3R5cGUiOiJlbmRfdXNlciIsInVzZXJfaWQiOiI2MTRjNDQyMWQwZTNlODcyOWI2OTQ2NzUiLCJzZXNzaW9uX2lkIjoiZjEyNDM1OTgtNzYwZi00NTE0LWFkZGItNjcxZWIxMjZmZWNmIiwiaWF0IjoxNjUyMjU2MTAzfQ.kLrDBa6o7bgK1QY2ZX3imBg-zINYxXo9-mdjGvO9kM8"
+          "token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX3R5cGUiOiJlbmRfdXNlciIsInVzZXJfaWQiOiI2MTRjNDQyMWQwZTNlODcyOWI2OTQ2NzUiLCJzZXNzaW9uX2lkIjoiMWUwMjg5N2QtOWZhZC00OGU0LTkzNWEtZDQxYmYxMDZhYzJkIiwiaWF0IjoxNjU1MjYwOTA5fQ.BMste5BO65HVQKmvvWZlfOuf0l40nxeyCc9jDEdwl8s"
           );
         sessionStorage.setItem("lang", "en");
       }

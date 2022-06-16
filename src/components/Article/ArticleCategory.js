@@ -4,6 +4,7 @@ import SectionTitle from "../../UI/SectionTitle";
 import CategoryLoader from "../Home/CategoryLoader";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { BASE_URL } from "../../AxiosInstance/axiosInstance";
 
 const useStyles = makeStyles({
   root: {
@@ -41,7 +42,7 @@ return (
                 <Grid key={category?.translations?.en?.category_name} item xs={12} md={6} lg={4}>
                   <Card className={classes.root}
                     style={{backgroundImage: category.category_image
-                        ? `url(http://localhost:5006/v1/${category.category_image})`
+                        ? `url(${BASE_URL}/${category.category_image})`
                         : "",
                       backgroundPosition: "center",
                       backgroundSize: "cover",

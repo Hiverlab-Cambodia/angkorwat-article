@@ -3,7 +3,7 @@ import axios from 'axios';
 //export const BASE_URL = 'https://projects.xcitech.in:5006/v1'
 
 //export const BASE_URL = 'http://127.0.0.1:5006/v1'
-export const BASE_URL = 'https://discover-cambodia.herokuapp.com:5006/v1'
+export const BASE_URL = 'https://discovercambodia.hiverlab.com/v1'
 
 
 const API = axios.create({
@@ -27,6 +27,5 @@ API.interceptors.response.use(response => response,error => {
   }
   return Promise.reject(error);
 })
-
 export default API;
 

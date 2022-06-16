@@ -7,6 +7,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 // import CardMedia from "@material-ui/core/CardMedia";
 import dayjs from "dayjs";
+import { BASE_URL } from "../../AxiosInstance/axiosInstance";
+
 
 const demoImage =
   "https://images.pexels.com/photos/5993005/pexels-photo-5993005.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
@@ -64,7 +66,7 @@ const Article = (props) => {
  
 return (
   <Card className={classes.card}
-    style={{ backgroundImage: article?.media_images[0]?.path ? `url(http://localhost:5006/v1/${article?.media_images[0].path})`: `url(${demoImage})`,
+    style={{ backgroundImage: article?.media_images[0]?.path ? `url(${BASE_URL}/${article?.media_images[0].path})`: `url(${demoImage})`,
       minHeight: displayFor === "Home" ? "268px" : "200px",
       borderRadius: displayFor === "Home" && "0px",
       // minWidth: displayFor === "Home" && '375px' ,
